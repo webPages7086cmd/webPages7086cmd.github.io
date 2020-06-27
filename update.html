@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>更新</title>
+		<script src="./resources/js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/prism.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./resources/css/element-ui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/element-ui.transitions.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/prism.min.css"/>
+		<script src="./resources/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/element-ui.collapse-transition.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/element-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			li{
+				font-size: 16px;
+			}
+			h1{
+				font-size: 24px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<el-row>
+				<el-col :span="4">
+					<p>    </p>
+				</el-col>
+				<el-col :span="16">
+					<transition name="el-fade-in" appear >
+						<div>
+							<br>
+							<h1>0.0.1正式版更新汇总</h1>
+							<ol>
+								<li>添加了自动更新功能</li>
+							</ol>
+							<hr >
+							<h1>0.0.1-beta.4更新汇总</h1>
+							<ol>
+								<li>添加了文档</li>
+								<li>添加了进入动画</li>
+							</ol>
+							<hr >
+							<h1>0.0.1-beta.3更新汇总</h1>
+							<ol>
+								<li>修复了无法使用的<b>bug</b></li>
+							</ol>
+							<hr >
+							<h1>0.0.1-beta.2更新汇总</h1>
+							<ol>
+								<li>添加了调试</li>
+							</ol>
+							<hr >
+							<h1>0.0.1-beta.3更新汇总</h1>
+							<ol>
+								<li>全新设计</li>
+								<li>添加转换功能</li>
+							</ol>
+						</div>
+					</transition>
+				</el-col>
+			</el-row>
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:"#app",
+				data:function(){
+					return{
+						
+					}
+				},
+				methods:{
+					
+				}
+			});
+		</script>
+	</body>
+</html>
