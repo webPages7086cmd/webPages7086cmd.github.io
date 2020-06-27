@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="./resources/js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/element-ui.collapse-transition.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/element-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/prism.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./resources/css/element-ui.transitions.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/element-ui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/prism.min.css"/>
+		<link rel="icon" href="./icon.png"/>
+		<title>webPages</title>
+		<style type="text/css">
+			.center{
+				text-align: center;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<el-container>
+				<el-aside width="200px">
+					
+				</el-aside>
+				<el-container>
+					<el-head>
+						<br>
+						<h1>基本结构</h1>
+					</el-head>
+					<el-main>
+						我们的webPages文档分为5个模块，缺一不可。
+						<ol>
+							<li><el-link type="primary" href="#DOCTYPE">DOCTYPE</el-link></li>
+							<li><el-link type="primary" href="#set">set</el-link></li>
+							<li><el-link type="primary" href="#template">template</el-link></li>
+							<li><el-link type="primary" href="#style">style</el-link></li>
+							<li><el-link type="primary" href="#script">script</el-link></li>
+						</ol>
+						<el-divider></el-divider>
+						<div id="DOCTYPE">
+							<h2>DOCTYPE</h2>
+							<p>像HTML一样，DOCTYPE属于文档的声明。没有了DOCTYPE，等于webPages文档就没有了身份证号，寸步难行。</p>
+							<p>如何进行声明呢？</p>
+							<h4>HTML中的声明</h4>
+							这里说HTML5。很简单：
+<pre><code class="language-html line-number">&lt;!DOCTYPE html&gt;</code></pre>
+							<p>实际上，webPages也一样简单：</p>
+<pre><code class="language-html line-number">&lt;!DOCTYPE webPages version="1.0"&gt;</code></pre>
+							<p>不像plist拥有繁琐的声明过程，只是和HTML一样的<b>DOCTYPE</b>，只不过添加了一个版本，其实更加方便。比如现在的HTML4，就需要其他的文件进行引入，而我们的<b>webPages</b>结构升级后，<b>Compiler</b>会保留老版本的解释，淘汰时可以安装老版本。这样，就一点也不麻烦了。</p>
+							<blockquote>
+								<p>注：webPages文档的<b>DOCTYPE</b>只写一行且没有多余的空行。</p>
+							</blockquote>
+						</div>
+						<div id="set">
+							<h2>set</h2>
+							实际上， <b>set</b>元素就是HTML中head除了文件内的CSS(<code class="language-html">&lt;style&gt;</code>)的所有元素。我们虽然去除了style元素，但是使得开发更加有条理性，虽然加多了Compiler的编写，但是为了我们能够更好地使用。
+							<p>基本的set：</p>
+<pre><code class="language-html">&lt;set&gt;
+	&lt;meta charset="utf-8"&gt;&lt;/meta&gt;
+	&lt;title&gt;&lt;/title&gt;
+&lt;/set&gt;</code></pre>
+							怎么样，是不是很简单呢！
+							同时，我们还可以引入各式各样的文件，比如：
+<pre><code class="language-html">&lt;set&gt;
+	&lt;script src="https://unpkg.com/vue@2.6.11/dist/vue.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+&lt;/set&gt;</code></pre>
+							这样就可以在webPages中把<code>Vue.js</code>引入了。
+						</div>
+						<div id="template">
+							<h2>template</h2>
+							<p>其实，<code>template</code>模块就是堂堂正正的HTML中的主干部分。<br>为什么呢？为什么，请问您的英语老师吧。我喜欢叫那个HTML页面为<code>HTML板块</code>，<code>template</code>其实就是板块的意思。</p>
+							在<code class="language-html">&lt;template&gt;</code>模块中，我们像上文一样随心所欲地编写网页内容。不用愁什么不对应，这个，全部包在<code>webPages Compiler</code>的身上！
+							<p>比如，我们编写一个<code>Hello, World!</code></p>
+<pre><code class="language-html">&lt;template&gt;
+	&lt;h1&gt;Hello, World!&lt;/h1&gt;
+&lt;/template&gt;</code></pre>
+							<p>通过我们<code>webPages Compiler</code>加上<code class="language-html">&lt;!DOCTYPE webPages version="1.0"&gt;</code>，<code class="language-html">&lt;set&gt;</code>，<code class="language-html">&lt;style&gt;</code>和<code class="language-html">&lt;script&gt;</code>的编译转换，直接在对应的地方输出了这样：</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset="utf-8"&gt;&lt;/meta&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style type="text/css"&gt;
+			
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+<b>		&lt;h1&gt;Hello, World!&lt;/h1&gt;</b>
+		&lt;script type="text/javascript"&gt;
+			
+		&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+							<p>加粗部分就是<code>template</code>中的内容。</p>
+							<blockquote>
+								注：如果在里面引入<code>Vue.js</code>并且使用<code class="language-javascript">var vm=new Vue();</code>引入，<b>请自带<code class="language-html">&lt;div id="app"&gt;</code></b>
+							</blockquote>
+						</div>
+						<div id="style">
+							<h2>style</h2>
+							<p><code class="language-html">&lt;style&gt;</code>元素就是<code>CSS</code>的直接表述。这里(<code>webPages Document 1.0</code>)只是CSS，以后会加入<code>Less</code>或者<code>Sass</code>。</p>
+							<p>我们做一个<b>将<code>class</code>为<code>.center</code>的元素<b>放置到中间</b></b></p>
+<pre><code class="language-html">&lt;style&gt;
+	.center{
+		text-align: center;
+	}
+&lt;/style&gt;</code></pre>
+							<p>由于<b>安全起见</b>，<code class="language-html">&lt;style type="text/css"&gt;</code>是编译以后的成果。</p>
+<pre><code class="language-html">&lt;style type="text/css"&gt;
+	.center{
+		text-align: center;
+	}
+&lt;/style&gt;</code></pre>
+						</div>
+						<div id="script">
+							<h2>script</h2>
+							<p><code class="language-html">&lt;script&gt;</code>是<code>HTML</code>中的脚本模块。</p>
+							<p>譬如说：我们想要把<code>Vue.js</code>通过<code class="language-javascript">var vm=new Vue();</code>引入，并且绑定了<code>el</code>, <code>data</code>和<code>methods</code>：</p>
+<pre><code class="language-html">&lt;script&gt;
+	var vm=new Vue({
+		el:"#app",
+		data(){
+			return{
+				
+			}
+		},
+		methods:{
+			
+		}
+	});
+&lt;/script&gt;</code></pre>
+							<p>经过<code>webPages Compiler</code>的编译，就变成了：</p>
+<pre><code class="language-html">&lt;script type="text/javascript"&gt;
+	var vm=new Vue({
+		el:"#app",
+		data(){
+			return{
+				
+			}
+		},
+		methods:{
+			
+		}
+	});
+&lt;/script&gt;</code></pre>
+							<p>同<code class="language-html">&lt;style&gt;</code>一样，我们在里面追加了<code class="language-javascript">text="javascript"</code>属性。<br>在以后，我们会加入<code>typescript</code>，但不是<code class="language-html">&lt;script type="ts"&gt;</code></p>
+						</div>
+					</el-main>
+					<el-footer>
+						
+					</el-footer>
+				</el-container>
+				<el-aside width="200px">
+					
+				</el-aside>
+			</el-container>
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:"#app",
+				data(){
+					return{
+						
+					}
+				},
+				methods:{
+					
+				}
+			});
+		</script>
+	</body>
+</html>

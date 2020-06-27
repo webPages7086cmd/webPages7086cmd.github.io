@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="./resources/js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/element-ui.collapse-transition.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/element-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/prism.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/crocodoc.viewer.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./resources/css/element-ui.transitions.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/element-ui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/prism.min.css"/>
+		<link rel="icon" href="./icon.png"/>
+		<title>webPages</title>
+		<style type="text/css">
+			.center{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<el-container>
+				<el-aside width="200px">
+					
+				</el-aside>
+				<el-container>
+					<el-head>
+						<br>
+						<h1>介绍</h1>
+					</el-head>
+					<el-main>
+						<code>webPages Compiler</code>由7086cmd制作。
+						<h2>界面</h2>
+						由macOS启发，模仿了macOS的样式。菜单居上。
+						<viewer>
+							<img src="./resources/img/pic01.png" style="zoom:40%">
+						</viewer>
+						<h5>注意：webPages Compiler的菜单，必须点击文字。</h5>
+						<h2>使用</h2>
+						<p>点击<b>转换模式</b>，稍等后，依次点击上方的"文件"=>"打开"，点击打开框，选择文件后，主窗体自动地载入<code>webPages</code>文件。点击"转换"按钮，自动生成<code>HTML</code>文件。</p>
+						<p>然后点击菜单里面的"保存文件"，保存文件。</p>
+						<p>最后，可以按下"调试"，自动打开调试的窗口。</p>
+					</el-main>
+					<el-footer>
+						
+					</el-footer>
+				</el-container>
+				<el-aside width="200px">
+					
+				</el-aside>
+			</el-container>
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:"#app",
+				data(){
+					return{
+						
+					}
+				},
+				methods:{
+					
+				}
+			});
+			Viewer.setDefaults({
+				Options: {
+					"inline":true,
+					"button":true,
+					"navbar":true,
+					"title":true,
+					"toolbar":true,
+					"tooltip":true,
+					"movable":true,
+					"zoomable":true,
+					"rotatable":true,
+					"scalable":true,
+					"transition":true,
+					"fullscreen":true,
+					"keyboard":true,
+					"url":"data-source",
+				}
+			});
+		</script>
+	</body>
+</html>

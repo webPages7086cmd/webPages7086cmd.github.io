@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="./resources/js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/element-ui.collapse-transition.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/element-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./resources/js/prism.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./resources/css/element-ui.transitions.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/element-ui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/css/prism.min.css"/>
+		<link rel="icon" href="./icon.png"/>
+		<title>webPages</title>
+		<style type="text/css">
+			.center{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<el-container>
+				<el-head>
+					<br>
+					<h1 class="center">webPages</h1>
+					<p class="center">——一种代码构建网页的、更加简洁的方式<el-button type="text" v-on:click="showInt">查看介绍</el-button></p>
+					<el-row>
+						<el-col :span="2"><p>    </p></el-col>
+						<el-col :span="4"><el-button type="primary" plain v-on:click="goToWebPagesDocument()">查看<b>webPages</b>的文档</el-button></el-col>
+						<el-col :span="1"><p>    </p></el-col>
+						<el-col :span="4"><el-button type="primary" plain v-on:click="goToWebPagesCompilerDocument()">查看<b>webPagesCompiler</b>的文档</el-button></el-col>
+						<el-col :span="1"><p>    </p></el-col>
+						<el-col :span="4"><el-button type="primary" plain v-on:click="goToWebPagesEditorDocument()">查看<b>webPagesEditor</b>的文档</el-button></el-col>
+						<el-col :span="1"><p>    </p></el-col>
+						<el-col :span="4"><el-button type="primary" plain v-on:click="goToWebPagesQuickMakerDocument()">查看<b>webPagesQuickMacker</b>的文档</el-button></el-col>
+						<el-col :span="1"><p>    </p></el-col>
+					</el-row>
+				</el-head>
+				<el-container>
+					<el-aside width="80px">
+						
+					</el-aside>
+					<el-main>
+						<transition name="el-fade-in">
+							<div v-show="show">
+								<p>全新勾画，基于<b>.Vue</b>文件启发</p>
+								<h2>架构</h2>
+<pre><code class="language-html line-number">&lt;!DOCTYPE webPages version="1.0"&gt;
+&lt;set&gt;
+	&lt;title&gt;Hello, World!&lt;/title&gt;
+	&lt;meta&gt;charset="utf-8"&lt;/meta&gt;
+	&lt;script src="https://unpkg.com/vue@2.6.11/dist/vue.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+&lt;/set&gt;
+
+&lt;template&gt;
+	&lt;div id="#app"&gt;
+		&lt;h1 style="text-align: center" v-text="msg"&gt;&lt;/h1&gt;
+	&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;style&gt;
+	h1{
+		font-size:36px;
+	}
+&lt;/style&gt;
+
+&lt;script&gt;
+	var vm=new Vue({
+		el:"#app",
+		data(){
+			return{
+				msg:'Hello, World!'
+			}
+		},
+		methods:{
+			
+		}
+	});
+&lt;/script&gt;</code></pre>
+							</div>
+						</transition>
+					</el-main>
+					<el-aside width="80px">
+						
+					</el-aside>
+				</el-container>
+				<el-footer>
+					
+				</el-footer>
+			</el-container>
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:"#app",
+				data(){
+					return{
+						show:false
+					}
+				},
+				methods:{
+					goToWebPagesCompilerDocument:function(){
+						window.location.href="./webPagesCompilerDocument/index.html";
+					},
+					goToWebPagesDocument:function(){
+						window.location.href="./webPagesDocument/index.html";
+					},
+					goToWebPagesEditorDocument:function(){
+						this.$alert('Editor正在酝酿，还没有成形。因此未公布文档。','提示',{
+							type:'error'
+						});
+					},
+					goToWebPagesQuickMakerDocument:function(){
+						this.$alert('QuickMacker正在酝酿，还没有成形。因此未公布文档。','提示',{
+							type:'error'
+						});
+					},
+					showInt:function(){
+						this.show=true;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
